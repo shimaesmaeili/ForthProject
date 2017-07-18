@@ -1,0 +1,101 @@
+.center {
+    align-items: center;
+    text-align: center;
+}
+.size {
+    width: 200px;
+    margin:auto;
+    border: none;
+}
+.big {
+    font-size: 200%;
+    margin: 100px;
+    text-align: center;
+}
+.link {
+    display: block;
+    background-color: #f2f2f2;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: auto;
+    padding: 1%;
+    width: 500px;
+}
+.fixed {
+    width: 200px;
+}
+
+a.link:hover {
+    background-color: #555;
+    color: white;
+}
+
+a {
+    text-align: center;
+    direction: rtl;
+    font-family: "B Nazanin+ Regular";
+}
+
+input, select {
+    padding: 10px;
+    margin: 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "B Nazanin+ Regular";
+    direction: rtl;
+}
+
+input[type=submit] {
+    display: block;
+    margin: auto;
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+    float: left;
+}
+
+input[type=button] {
+    display: block;
+    margin: auto;
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+    float: left;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+p {
+    direction: rtl;
+    font-family: "B Nazanin+ Regular";
+}
+
+form {
+    direction: rtl;
+    font-family: "B Nazanin+ Regular";
+}
+
+table {
+    direction: rtl;
+    font-family: "B Nazanin+ Regular";
+    border: none;
+    align-items: center;
+    margin: auto;
+}
+
+h3 {
+    font-family: "B Nazanin+ Regular";
+    direction: rtl;
+}
