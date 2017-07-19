@@ -3,7 +3,7 @@ package dao;
 import java.math.BigInteger;
 
 public class LoanFile {
-	int id;
+	String id;
 	Real realCustomer;
 	Loan loan;
 	int loanDuration;
@@ -12,11 +12,11 @@ public class LoanFile {
 	public LoanFile() {
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

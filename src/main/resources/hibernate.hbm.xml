@@ -14,7 +14,7 @@
             <property name="lastName" column="lastName" not-null="true"/>
             <property name="fatherName" column="fatherName" not-null="true"/>
             <property name="birthDate" column="birthDate" not-null="true"/>
-            <one-to-one name="loanFile" class="dao.LoanFile" constrained="false" cascade="none"/>
+            <!--<one-to-one name="loanFile" class="dao.LoanFile" constrained="false"/>-->
         </joined-subclass>
 
         <joined-subclass name="dao.Legal" table="accounts.legal">
@@ -54,10 +54,10 @@
     </class>
 
     <class name="dao.LoanFile" table="accounts.loanfile">
-        <id name="id" column="id" type="java.lang.Integer">
-            <generator class="increment"/>
-        </id>
-        <one-to-one name="realCustomer" class="dao.Real" constrained="true"/>
+        <id name="id" column="customerId"/>
+        <property name="loanDuration" column="loanDuration"/>
+        <property name="loanAmount" column="loanAmount"/>
+        <one-to-one name="realCustomer" class="dao.Real" cascade="save-update"/>
         <many-to-one name="loan" class="dao.Loan">
             <column name="loanId" not-null="true"/>
         </many-to-one>

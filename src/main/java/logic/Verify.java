@@ -1,12 +1,15 @@
 package logic;
 
+import dao.GrantCondition;
 import dao.LegalCRUD;
+import dao.LoanCRUD;
 import dao.RealCRUD;
 
 import java.math.BigInteger;
 import java.sql.SQLException;
+import java.util.List;
 
-public class Uniqueness {
+public class Verify {
 	public static String getRealId(BigInteger idCode) throws SQLException, ClassNotFoundException {
 		return RealCRUD.findIdByCode(idCode);
 	}
@@ -31,5 +34,17 @@ public class Uniqueness {
 		} else {
 			return false;
 		}
+	}
+
+	public static boolean hasValidCondition(int loanId, int duration, BigInteger amount) {
+		List<GrantCondition> grantConditions = LoanCRUD.findConditionsById(loanId);
+		for (GrantCondition grantCondition : grantConditions){
+			if (grantCondition.getMinDuration() < duration && grantCondition.getMaxDuration() > duration) {
+				if (grantCondition.getMinAmount().compareTo(amount) < 0 && grantCondition.getMaxAmount().compareTo(amount) > 0) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }

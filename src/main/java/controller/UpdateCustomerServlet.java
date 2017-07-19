@@ -1,6 +1,6 @@
 package controller;
 
-import logic.Uniqueness;
+import logic.Verify;
 import logic.Update;
 
 import javax.servlet.ServletException;
@@ -24,7 +24,7 @@ public class UpdateCustomerServlet extends HttpServlet {
 			newValues.put("fatherName", request.getParameter("fatherName"));
 			newValues.put("birthDate", request.getParameter("birthDate"));
 			try {
-				if (Uniqueness.isValidCodeReal(request.getParameter("id"), new BigInteger(request.getParameter("idCode")))) {
+				if (Verify.isValidCodeReal(request.getParameter("id"), new BigInteger(request.getParameter("idCode")))) {
 					Update.updateRealCustomer(newValues);
 					request.getRequestDispatcher("/customers.jsp").forward(request, response);
 				} else {
@@ -47,7 +47,7 @@ public class UpdateCustomerServlet extends HttpServlet {
 			newValues.put("name", request.getParameter("name"));
 			newValues.put("registrationDate", request.getParameter("registrationDate"));
 			try {
-				if (Uniqueness.isValidCodeLegal(request.getParameter("id"), new BigInteger(request.getParameter("eCode")))) {
+				if (Verify.isValidCodeLegal(request.getParameter("id"), new BigInteger(request.getParameter("eCode")))) {
 					Update.updateLegalCustomer(newValues);
 					request.getRequestDispatcher("/customers.jsp").forward(request, response);
 				} else {

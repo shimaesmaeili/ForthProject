@@ -9,7 +9,7 @@ public class Real extends Customer {
 	private String lastName;
 	private String fatherName;
 	private Date birthDate;
-	LoanFile loanFile;
+//	private LoanFile loanFile;
 
 	public Real() {
 	}
@@ -53,12 +53,12 @@ public class Real extends Customer {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-
-	public LoanFile getLoanFile() {
-		return loanFile;
-	}
-
-	public void setLoanFile(LoanFile loanFile) {
-		this.loanFile = loanFile;
-	}
+	
+//	public LoanFile getLoanFile() {
+//		return loanFile;
+//	}
+//
+//	public void setLoanFile(LoanFile loanFile) {
+//		this.loanFile = loanFile;
+//	}
 }

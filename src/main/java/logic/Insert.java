@@ -2,6 +2,7 @@ package logic;
 
 import dao.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -50,5 +51,21 @@ public class Insert {
 		loan.setGrantConditions(grantConditions);
 
 		LoanCRUD.insert(loan);
+	}
+
+	public static void createNewLoanFile(String customerId, int loanId, int duration, BigInteger amount) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
+		System.out.println(duration + " + " + amount);
+
+		LoanFile loanFile = new LoanFile();
+		Loan loan = LoanCRUD.findLoanById(loanId);
+		loanFile.setLoan(loan);
+		Real real = RealCRUD.findById(customerId);
+		loanFile.setRealCustomer(real);
+		loanFile.setLoanDuration(duration);
+		loanFile.setLoanAmount(amount);
+		loanFile.setId(real.getId());
+
+//		RealCRUD.addLoanFile(loanFile);
+		LoanFileCRUD.insert(loanFile);
 	}
 }

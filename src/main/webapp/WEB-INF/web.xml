@@ -84,4 +84,13 @@
         <servlet-name>getRealCustomerServlet</servlet-name>
         <url-pattern>/get-real-customer</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>checkVerificationServlet</servlet-name>
+        <servlet-class>controller.CheckVerifyGrantConditionsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkVerificationServlet</servlet-name>
+        <url-pattern>/check-verification</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,7 +1,7 @@
 package controller;
 
 import logic.Insert;
-import logic.Uniqueness;
+import logic.Verify;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +21,7 @@ public class CreateNewRealCustomerServlet extends HttpServlet {
 		String fatherName = request.getParameter("fatherName");
 		Date birthDate = Date.valueOf(request.getParameter("birthDate"));
 		try {
-			if (Uniqueness.getRealId(idCode) == null){
+			if (Verify.getRealId(idCode) == null){
 				String id = Insert.insertNewRealCustomer(idCode, firstName, lastName, fatherName, birthDate);
 				request.setAttribute("id", id);
 				request.getRequestDispatcher("/show-new-customer-id.jsp").forward(request, response);

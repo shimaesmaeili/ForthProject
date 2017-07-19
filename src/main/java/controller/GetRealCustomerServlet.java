@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GetRealCustomerServlet extends HttpServlet {
@@ -17,8 +18,9 @@ public class GetRealCustomerServlet extends HttpServlet {
 		String id = request.getParameter("customerId");
 		try {
 			HashMap<String, String> customer = Search.findRealCustomerById(id);
-			System.out.println(customer.get("idCode"));
+			ArrayList<HashMap<String, String>> loans = Search.findLoans();
 			request.setAttribute("customer", customer);
+			request.setAttribute("loans", loans);
 			request.getRequestDispatcher("/create-new-loan-file.jsp").forward(request, response);
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();

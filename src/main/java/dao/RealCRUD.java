@@ -64,21 +64,13 @@ public class RealCRUD {
 		return realCustomers;
 	}
 
-	public static HashMap<String, String> findById(String id) throws SQLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+	public static Real findById(String id) throws SQLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 		HashMap<String, String> realCustomer = new HashMap<String, String>();
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
 		Query query = session.createQuery("from dao.Real where id='" + id + "'");
 		List<Real> result = query.list();
 		session.close();
-		if (result.size() > 0) {
-			realCustomer.put("id", result.get(0).getId());
-			realCustomer.put("idCode", String.valueOf(result.get(0).getIdCode()));
-			realCustomer.put("firstName", result.get(0).getFirstName());
-			realCustomer.put("lastName", result.get(0).getLastName());
-			realCustomer.put("fatherName", result.get(0).getFatherName());
-			realCustomer.put("birthDate", String.valueOf(result.get(0).getBirthDate()));
-		}
-		return realCustomer;
+		return result.get(0);
 	}
 
 	public static void update(Real real) throws ClassNotFoundException, SQLException {
@@ -95,4 +87,16 @@ public class RealCRUD {
 		t.commit();
 		session.close();
 	}
+
+//	public static void addLoanFile(LoanFile loanFile) {
+//		Session session = new Configuration().configure().buildSessionFactory().openSession();
+//		session.save(loanFile);
+//		Query query = session.createQuery("update dao.Real set loanFiles=:loanFiles where id=:id");
+//		query.setParameter("id", loanFile.getRealCustomer().getId());
+//		query.setParameter("loanFiles", loanFile);
+//		Transaction t = session.beginTransaction();
+//		query.executeUpdate();
+//		t.commit();
+//		session.close();
+//	}
 }
