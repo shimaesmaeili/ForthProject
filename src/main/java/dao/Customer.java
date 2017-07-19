@@ -3,7 +3,7 @@ package dao;
 public class Customer {
 	private String id;
 
-	Customer(){
+	public Customer() {
 	}
 
 	public void setId(String id) {

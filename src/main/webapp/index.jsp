@@ -10,6 +10,8 @@
 	<a href="customers.jsp" class="link">مشتریان</a>
 	<br>
 	<a href="loans.jsp" class="link">تسهیلات</a>
+	<br>
+	<a href="create-new-loan-file.jsp" class="link">تشکیل پرونده تسهیلاتی</a>
 </div>
 </body>
 </html>

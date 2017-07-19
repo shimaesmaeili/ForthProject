@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>newRealCustomerServlet</servlet-name>
-        <servlet-class>controller.NewRealCustomerServlet</servlet-class>
+        <servlet-class>controller.CreateNewRealCustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newRealCustomerServlet</servlet-name>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>newLegalCustomerServlet</servlet-name>
-        <servlet-class>controller.NewLegalCustomerServlet</servlet-class>
+        <servlet-class>controller.CreateNewLegalCustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newLegalCustomerServlet</servlet-name>
@@ -56,5 +56,32 @@
     <servlet-mapping>
         <servlet-name>updateCustomerServlet</servlet-name>
         <url-pattern>/updateCustomer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>newLoanServlet</servlet-name>
+        <servlet-class>controller.CreateNewLoanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>newLoanServlet</servlet-name>
+        <url-pattern>/create-new-Loan</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getLoanInfoServlet</servlet-name>
+        <servlet-class>controller.GetLoanInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getLoanInfoServlet</servlet-name>
+        <url-pattern>/get-new-Loan-info</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getRealCustomerServlet</servlet-name>
+        <servlet-class>controller.GetRealCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getRealCustomerServlet</servlet-name>
+        <url-pattern>/get-real-customer</url-pattern>
     </servlet-mapping>
 </web-app>

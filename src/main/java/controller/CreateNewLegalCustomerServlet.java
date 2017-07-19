@@ -12,7 +12,7 @@ import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.SQLException;
 
-public class NewLegalCustomerServlet extends HttpServlet {
+public class CreateNewLegalCustomerServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BigInteger eCode = new BigInteger(request.getParameter("eCode"));
@@ -20,7 +20,7 @@ public class NewLegalCustomerServlet extends HttpServlet {
 		Date registrationDate = Date.valueOf(request.getParameter("registrationDate"));
 		try {
 			if (Uniqueness.getLegalId(eCode) == null) {
-				String id = Insert.insertLegalCustomer(eCode, name, registrationDate);
+				String id = Insert.insertNewLegalCustomer(eCode, name, registrationDate);
 				request.setAttribute("id", id);
 				request.getRequestDispatcher("/show-new-customer-id.jsp").forward(request, response);
 			} else {
