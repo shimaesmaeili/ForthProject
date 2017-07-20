@@ -32,7 +32,6 @@ public class Insert {
 	}
 
 	public static void insertNewLoan(String loanName, int interestRate, String[] names, String[] minDurations, String[] maxDurations, String[] minAmounts, String[] maxAmounts) throws SQLException, ClassNotFoundException {
-		System.out.println("CCC: " + loanName);
 		Loan loan = new Loan();
 		loan.setName(loanName);
 		loan.setInterestRate(interestRate);
@@ -54,8 +53,6 @@ public class Insert {
 	}
 
 	public static void createNewLoanFile(String customerId, int loanId, int duration, BigInteger amount) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
-		System.out.println(duration + " + " + amount);
-
 		LoanFile loanFile = new LoanFile();
 		Loan loan = LoanCRUD.findLoanById(loanId);
 		loanFile.setLoan(loan);

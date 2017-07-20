@@ -8,8 +8,7 @@ import java.io.IOException;
 
 public class GetLoanInformationServlet extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("BBB: " + request.getParameter("loanName"));
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("loanName", request.getParameter("loanName"));
 		request.setAttribute("interestRate", request.getParameter("interestRate"));
 		request.getRequestDispatcher("/define-grant-conditions.jsp").forward(request, response);

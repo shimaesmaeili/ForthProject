@@ -11,12 +11,12 @@ import java.util.List;
 
 public class CustomerCRUD {
 	public static String insert(Customer customer) throws ClassNotFoundException, SQLException {
-		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Transaction t = session.beginTransaction();
+//		Session session = new Configuration().configure().buildSessionFactory().openSession();
+//		Transaction t = session.beginTransaction();
 		customer.setId(String.valueOf(nextId()));
-		session.save(customer);
-		t.commit();
-		session.close();
+//		session.save(customer);
+//		t.commit();
+//		session.close();
 		return customer.getId();
 	}
 
@@ -24,7 +24,10 @@ public class CustomerCRUD {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
 		Query query  = session.createQuery("select cast(id as integer) from dao.Customer");
 		List<Integer> ids = query.list();
-		int maxId = Collections.max(ids);
+		int maxId = 0;
+		if (ids.size() > 0) {
+			maxId = Collections.max(ids);
+		}
 		session.close();
 		return maxId + 1;
 	}

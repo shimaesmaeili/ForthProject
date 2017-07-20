@@ -1,13 +1,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script>
+        function Validate() {
+            var frm = document.loanForm;
+            if (frm.loanName.value == "") {
+                alert("وارد کردن نام تسهیلات الزامی است!");
+                return false;
+            } else if (frm.interestRate.value == "") {
+                alert("وارد کردن نرخ سود الزامی است!");
+                return false;
+            }
+            return true;
+        }
+
+        function Clicked() {
+            if (Validate()) {
+                document.loanForm.submit();
+            }
+        }
+    </script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>تسهیلات</title>
 </head>
 <body>
 <h3 class="center">اطلاعات مورد نیاز: </h3>
 <div>
-	<form action="/get-new-Loan-info" method="post" name="realForm">
+	<form action="/get-new-Loan-info" method="get" name="loanForm">
 		<table>
 			<tr>
 				<td>نام نوع تسهیلات:</td>
@@ -20,11 +39,14 @@
 			<tr>
 				<td></td>
 				<td>
-					<input type="submit" value="ثبت">
+					<input type="button" value="ثبت" onclick="Clicked()">
 				</td>
 			</tr>
 		</table>
 	</form>
+
+    <br><br><br><br>
+    <a href="/index.jsp" class="link">صفحه اصلی</a>
 </div>
 </body>
 </html>

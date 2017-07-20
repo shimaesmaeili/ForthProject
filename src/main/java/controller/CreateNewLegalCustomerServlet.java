@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class CreateNewLegalCustomerServlet extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BigInteger eCode = new BigInteger(request.getParameter("eCode"));
 		String name = request.getParameter("name");
 		Date registrationDate = Date.valueOf(request.getParameter("registrationDate"));

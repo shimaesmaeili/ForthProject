@@ -5,20 +5,20 @@
 
 <hibernate-mapping>
     <class name="dao.Customer" table="accounts.customer">
-        <id name="id" type="string" column="id"/>
+        <id name="id" type="string" column="customerId"/>
 
         <joined-subclass name="dao.Real" table="accounts.real">
-            <key column="id"/>
+            <key column="realId"/>
             <property name="idCode" column="idCode" unique="true" not-null="true"/>
             <property name="firstName" column="firstName" not-null="true"/>
             <property name="lastName" column="lastName" not-null="true"/>
             <property name="fatherName" column="fatherName" not-null="true"/>
             <property name="birthDate" column="birthDate" not-null="true"/>
-            <!--<one-to-one name="loanFile" class="dao.LoanFile" constrained="false"/>-->
+            <one-to-one name="loanFile" class="dao.LoanFile" constrained="false"/>
         </joined-subclass>
 
         <joined-subclass name="dao.Legal" table="accounts.legal">
-            <key column="id"/>
+            <key column="legalId"/>
             <property name="eCode" column="eCode" unique="true" not-null="true"/>
             <property name="name" column="name" not-null="true"/>
             <property name="registrationDate" column="registrationDate" not-null="true"/>
@@ -26,22 +26,22 @@
     </class>
 
     <class name="dao.Loan" table="accounts.loan">
-        <id name="id" column="id" type="java.lang.Integer">
-            <generator class="increment"/>
+        <id name="id" column="loanId" type="java.lang.Integer">
+            <generator class="identity"/>
         </id>
         <property name="name" column="loanName" not-null="true"/>
         <property name="interestRate" column="interestRate" not-null="true"/>
-        <set name="grantConditions" table="grantcondition">
+        <set name="grantConditions" table="grantcondition" cascade="save-update">
             <key>
-                <column name="id" not-null="true"/>
+                <column name="loanId" not-null="true"/>
             </key>
             <one-to-many class="dao.GrantCondition"/>
         </set>
     </class>
     
     <class name="dao.GrantCondition" table="accounts.grantcondition">
-        <id name="id" column="id" type="java.lang.Integer">
-            <generator class="increment"/>
+        <id name="id" column="conditionId" type="java.lang.Integer">
+            <generator class="identity"/>
         </id>
         <many-to-one name="loan" class="dao.Loan">
             <column name="loanId" not-null="true"/>
@@ -54,7 +54,7 @@
     </class>
 
     <class name="dao.LoanFile" table="accounts.loanfile">
-        <id name="id" column="customerId"/>
+        <id name="id" column="loanfileId"/>
         <property name="loanDuration" column="loanDuration"/>
         <property name="loanAmount" column="loanAmount"/>
         <one-to-one name="realCustomer" class="dao.Real" cascade="save-update"/>

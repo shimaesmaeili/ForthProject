@@ -13,31 +13,32 @@ import java.math.BigInteger;
 import java.sql.SQLException;
 
 public class CheckVerifyGrantConditionsServlet extends HttpServlet {
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String customerId = request.getParameter("customerId");
-		int loanId = Integer.parseInt(request.getParameter("loanId"));
-		int duration = Integer.parseInt(request.getParameter("duration"));
-		BigInteger amount = new BigInteger(request.getParameter("amount"));
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String customerId = request.getParameter("customerId");
+        int loanId = Integer.parseInt(request.getParameter("loanId"));
+        int duration = Integer.parseInt(request.getParameter("duration"));
+        BigInteger amount = new BigInteger(request.getParameter("amount"));
 
-		System.out.println(duration + " + " + amount);
-
-		try {
-			if (Verify.hasValidCondition(loanId, duration, amount)) {
-				Insert.createNewLoanFile(customerId, loanId, duration, amount);
-			}
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+        try {
+            if (Verify.hasValidCondition(loanId, duration, amount)) {
+                Insert.createNewLoanFile(customerId, loanId, duration, amount);
+            } else {
+                request.setAttribute("message", "مقادیر واردشده در هیچ‌یک از شروط اعطای این تسهیلات صدق نمی‌کند!");
+                request.getRequestDispatcher("/error.jsp").forward(request, response);
+            }
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

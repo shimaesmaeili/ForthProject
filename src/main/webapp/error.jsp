@@ -8,6 +8,6 @@
 <br><br><br><br><br><br>
 <h3 class="center">${message}</h3>
 <br><br><br><br><br><br>
-<a href="customers.jsp" class="link">صفحه اصلی</a>
+<a href="index.jsp" class="link">صفحه اصلی</a>
 </body>
 </html>

@@ -38,7 +38,7 @@ a.link:hover {
 a {
     text-align: center;
     direction: rtl;
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
 }
 
 input, select {
@@ -47,7 +47,7 @@ input, select {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
     direction: rtl;
 }
 
@@ -83,23 +83,23 @@ input[type=submit]:hover {
 
 p {
     direction: rtl;
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
 }
 
 form {
     direction: rtl;
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
 }
 
 table {
     direction: rtl;
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
     border: none;
     align-items: center;
     margin: auto;
 }
 
 h3 {
-    font-family: "B Nazanin+ Regular";
+    font-family: "B Nazanin";
     direction: rtl;
 }

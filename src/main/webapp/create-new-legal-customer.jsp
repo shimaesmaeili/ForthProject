@@ -31,7 +31,7 @@
 <h3 class="center">اطلاعات مورد نیاز: </h3>
 
 <div>
-	<form action="newLegalCustomer" method="post" name="legalForm">
+	<form action="newLegalCustomer" method="get" name="legalForm">
 		<table class="center">
 			<tr>
 				<td>نام شرکت:</td>

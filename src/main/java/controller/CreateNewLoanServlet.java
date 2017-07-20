@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class CreateNewLoanServlet extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String loanName = request.getParameter("loanName");
 		int interestRate = Integer.parseInt(request.getParameter("interestRate"));
 

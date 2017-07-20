@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<form id="search" action="/find" method="post" name="searchForm">
+<form id="search" action="/find" method="get" name="searchForm">
 	<fieldset class="size">
 		نوع مشتری: <br>
 		<select id="customerType" name="customerType" onchange="byType(this.value)" class="fixed">

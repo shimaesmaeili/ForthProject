@@ -9,14 +9,10 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class LoanCRUD {
-	public static int insert(Loan loan) throws ClassNotFoundException, SQLException {
+	public static int insert(Loan loan) {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
-		Set<GrantCondition> grantConditions = loan.getGrantConditions();
 		session.save(loan);
-		for (GrantCondition grantCondition : grantConditions){
-			session.save(grantCondition);
-		}
 		transaction.commit();
 		session.close();
 		return loan.getId();

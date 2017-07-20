@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class CreateNewRealCustomerServlet extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BigInteger idCode = new BigInteger(request.getParameter("idCode"));
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");

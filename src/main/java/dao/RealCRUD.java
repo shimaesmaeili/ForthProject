@@ -47,7 +47,6 @@ public class RealCRUD {
 		ArrayList<HashMap<String, String>> realCustomers = new ArrayList<HashMap<String, String>>();
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
 		Query query = session.createQuery("from dao.Real where " + field + "='" + value + "'");
-		System.out.println("from dao.Real where " + field + "='" + value + "'");
 		List<Real> results = query.list();
 		session.close();
 		for (int i = 0; i < results.size(); i++) {

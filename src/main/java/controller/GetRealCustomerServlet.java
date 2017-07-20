@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.gson.Gson;
 import logic.Search;
 
 import javax.servlet.ServletException;
@@ -14,14 +15,22 @@ import java.util.HashMap;
 
 public class GetRealCustomerServlet extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("customerId");
 		try {
 			HashMap<String, String> customer = Search.findRealCustomerById(id);
-			ArrayList<HashMap<String, String>> loans = Search.findLoans();
-			request.setAttribute("customer", customer);
-			request.setAttribute("loans", loans);
-			request.getRequestDispatcher("/create-new-loan-file.jsp").forward(request, response);
+
+//			ArrayList<HashMap<String, String>> loans = Search.findLoans();
+//			request.setAttribute("customer", customer);
+//			request.setAttribute("loans", loans);
+//			request.getRequestDispatcher("/create-new-loan-file.jsp").forward(request, response);
+
+            String json = new Gson().toJson(customer);
+
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
+
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
