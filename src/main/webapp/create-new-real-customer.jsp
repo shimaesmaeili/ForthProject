@@ -51,7 +51,7 @@
 <body>
 <h3 class="center">اطلاعات مورد نیاز: </h3>
 <div>
-	<form action="/new-real-customer" method="get" name="realForm">
+	<form action="/new-real-customer" method="post" name="realForm">
 		<table>
 			<tr>
 				<td>نام:</td>

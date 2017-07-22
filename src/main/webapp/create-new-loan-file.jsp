@@ -62,7 +62,7 @@
 </div>
 <br><br><br><br>
 <div class="center" id="loansInfo" style="display:none">
-	<form action="/check-verification" method="get" name="loanFileInfo">
+	<form action="/check-verification" method="post" name="loanFileInfo">
 		<table>
 			<tr>
 				<td>نوع تسهیلات:</td>

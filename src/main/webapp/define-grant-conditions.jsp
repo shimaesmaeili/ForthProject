@@ -53,7 +53,7 @@
 
 <h3 class="center">شروط اعطای تسهیلات <%=request.getAttribute("loanName")%>:</h3>
 
-<form action="/create-new-Loan" method="get" name="grantConditionForm">
+<form action="/create-new-Loan" method="post" name="grantConditionForm">
 	<table id="tableForm">
 		<tr>
 			<th>نام</th>

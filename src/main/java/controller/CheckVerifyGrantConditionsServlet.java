@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 public class CheckVerifyGrantConditionsServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		String customerId = request.getParameter("customerId");
 		int loanId = Integer.parseInt(request.getParameter("loanId"));
 		int duration = Integer.parseInt(request.getParameter("duration"));

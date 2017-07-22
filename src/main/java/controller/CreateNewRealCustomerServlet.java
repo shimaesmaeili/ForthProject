@@ -12,7 +12,7 @@ import java.sql.Date;
 
 public class CreateNewRealCustomerServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		BigInteger idCode = new BigInteger(request.getParameter("idCode"));
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");

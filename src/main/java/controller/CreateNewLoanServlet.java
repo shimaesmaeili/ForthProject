@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class CreateNewLoanServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		String loanName = request.getParameter("loanName");
 		int interestRate = Integer.parseInt(request.getParameter("interestRate"));
 

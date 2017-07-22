@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class FindCustomersServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<HashMap<String, String>> results = null;
 
 		if (request.getParameter("customerType").equals("real")) {

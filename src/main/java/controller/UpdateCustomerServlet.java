@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class UpdateCustomerServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		if (request.getParameter("customerType").equals("real")) {
 			HashMap<String, String> newValues = new HashMap<String, String>();
 			newValues.put("id", request.getParameter("id"));

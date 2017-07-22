@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class GetLoanInformationServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("loanName", request.getParameter("loanName"));
 		request.setAttribute("interestRate", request.getParameter("interestRate"));
 		try {

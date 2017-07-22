@@ -13,7 +13,7 @@
 	</h3>
 </div>
 <div>
-	<form action="/update-customer" method="get">
+	<form action="/update-customer" method="post">
 		<table class="center">
 			<c:if test="${customerType=='real'}">
 				<tr>

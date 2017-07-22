@@ -26,7 +26,7 @@
 <body>
 <h3 class="center">اطلاعات مورد نیاز: </h3>
 <div>
-	<form action="/get-new-Loan-info" method="get" name="loanForm">
+	<form action="/get-new-Loan-info" method="post" name="loanForm">
 		<table>
 			<tr>
 				<td>نام نوع تسهیلات:</td>
