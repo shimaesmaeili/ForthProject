@@ -7,7 +7,7 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		BasicConfigurator.configure();
+//		BasicConfigurator.configure();
 		log.info("info");
 		log.warn("warn");
 

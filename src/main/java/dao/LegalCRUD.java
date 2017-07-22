@@ -28,8 +28,9 @@ public class LegalCRUD {
 		session.close();
 		if (result.size() > 0) {
 			return result.get(0).getId();
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public static void remove(String id) {

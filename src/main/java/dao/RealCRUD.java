@@ -1,5 +1,7 @@
 package dao;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,12 +13,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class RealCRUD {
+
 	public static String insert(Real real) {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		CustomerCRUD.insert(real);
 		session.save(real);
-		t.commit();
+		transaction.commit();
 		session.close();
 		return real.getId();
 	}
@@ -28,8 +31,9 @@ public class RealCRUD {
 		session.close();
 		if (result.size() > 0) {
 			return result.get(0).getId();
+		} else {
+			return null;
 		}
-		return null;
 	}
 
 	public static void remove(String id) {

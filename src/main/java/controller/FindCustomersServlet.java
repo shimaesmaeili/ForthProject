@@ -14,6 +14,7 @@ public class FindCustomersServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<HashMap<String, String>> results = null;
+
 		if (request.getParameter("customerType").equals("real")) {
 			results = Search.findRealCustomers(request.getParameter("field"), request.getParameter("value"));
 		} else if (request.getParameter("customerType").equals("legal")) {

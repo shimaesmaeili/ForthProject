@@ -4,11 +4,14 @@ import dao.GrantCondition;
 import dao.LegalCRUD;
 import dao.LoanCRUD;
 import dao.RealCRUD;
+import org.apache.log4j.Logger;
 
 import java.math.BigInteger;
 import java.util.List;
 
 public class Verify {
+	private static Logger log = Logger.getLogger(Insert.class);
+
 	public static String getRealId(BigInteger idCode) {
 		return RealCRUD.findIdByCode(idCode);
 	}
@@ -40,6 +43,7 @@ public class Verify {
 		for (GrantCondition grantCondition : grantConditions){
 			if (grantCondition.getMinDuration() < duration && grantCondition.getMaxDuration() > duration) {
 				if (grantCondition.getMinAmount().compareTo(amount) < 0 && grantCondition.getMaxAmount().compareTo(amount) > 0) {
+					log.info("The condition defined by customer has been ");
 					return true;
 				}
 			}

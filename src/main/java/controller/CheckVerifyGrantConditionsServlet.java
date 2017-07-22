@@ -19,8 +19,7 @@ public class CheckVerifyGrantConditionsServlet extends HttpServlet {
         BigInteger amount = new BigInteger(request.getParameter("amount"));
 
         try {
-            if (Verify.hasValidCondition(loanId, duration, amount)) {
-                Insert.createNewLoanFile(customerId, loanId, duration, amount);
+            if (Insert.createNewLoanFile(customerId, loanId, duration, amount)) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
                 request.setAttribute("message", "مقادیر واردشده در هیچ‌یک از شروط اعطای این تسهیلات صدق نمی‌کند!");

@@ -18,8 +18,8 @@ public class CreateNewLegalCustomerServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		Date registrationDate = Date.valueOf(request.getParameter("registrationDate"));
 		try {
-			if (Verify.getLegalId(eCode) == null) {
-				String id = Insert.insertNewLegalCustomer(eCode, name, registrationDate);
+			String id = Insert.insertNewLegalCustomer(eCode, name, registrationDate);
+			if (id != null) {
 				request.setAttribute("id", id);
 				request.getRequestDispatcher("/show-new-customer-id.jsp").forward(request, response);
 			} else {
