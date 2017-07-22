@@ -7,7 +7,6 @@ import dao.RealCRUD;
 
 import java.math.BigInteger;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.util.HashMap;
 
 public class Update {

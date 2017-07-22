@@ -1,12 +1,12 @@
-$(document).ready(function() {
-    $('#search').click(function(e) {
+$(document).ready(function () {
+    $('#search').click(function (e) {
         e.preventDefault();
         $.ajax({
-            url : '/get-real-customer',
-            data : {
-                customerId : $('#customerId').val()
+            url: '/get-real-customer',
+            data: {
+                customerId: $('#customerId').val()
             },
-            success : function(responseText) {
+            success: function (responseText) {
                 $('#firstName').val(responseText.customer.firstName);
                 $('#lastName').val(responseText.customer.lastName);
                 $('#customerInfo').show();
@@ -16,7 +16,7 @@ $(document).ready(function() {
                 $element.empty(); // remove old options
                 $element.append($("<option></option>")
                     .attr("value", '').text(''));
-                $.each(responseText.loans, function(key, value) {
+                $.each(responseText.loans, function (key, value) {
                     $element.append($("<option></option>")
                         .attr("value", value.id).text(value.name));
                 });

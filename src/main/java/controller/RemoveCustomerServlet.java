@@ -11,7 +11,7 @@ import java.io.IOException;
 public class RemoveCustomerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-		if (request.getParameter("customerType").equals("real")){
+		if (request.getParameter("customerType").equals("real")) {
 			Remove.removeRealCustomer(request.getParameter("id"));
 		} else if (request.getParameter("customerType").equals("legal")) {
 			Remove.removeLegalCustomer(request.getParameter("id"));

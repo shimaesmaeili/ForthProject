@@ -22,7 +22,7 @@ public class Verify {
 
 	public static boolean isValidCodeReal(String id, BigInteger newIdCode) {
 		String assignedId = RealCRUD.findIdByCode(newIdCode);
-		if (assignedId==null || assignedId.equals(id)) {
+		if (assignedId == null || assignedId.equals(id)) {
 			return true;
 		} else {
 			return false;
@@ -31,7 +31,7 @@ public class Verify {
 
 	public static boolean isValidCodeLegal(String id, BigInteger newCode) {
 		String assignedId = LegalCRUD.findIdByCode(newCode);
-		if (assignedId==null || assignedId.equals(id)) {
+		if (assignedId == null || assignedId.equals(id)) {
 			return true;
 		} else {
 			return false;
@@ -40,7 +40,7 @@ public class Verify {
 
 	public static boolean hasValidCondition(int loanId, int duration, BigInteger amount) {
 		List<GrantCondition> grantConditions = LoanCRUD.findConditionsById(loanId);
-		for (GrantCondition grantCondition : grantConditions){
+		for (GrantCondition grantCondition : grantConditions) {
 			if (grantCondition.getMinDuration() < duration && grantCondition.getMaxDuration() > duration) {
 				if (grantCondition.getMinAmount().compareTo(amount) < 0 && grantCondition.getMaxAmount().compareTo(amount) > 0) {
 					log.info("At least one of the grant condition has been satisfied.");

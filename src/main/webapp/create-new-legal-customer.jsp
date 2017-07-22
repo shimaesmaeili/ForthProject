@@ -19,8 +19,8 @@
 			}
 			return true;
 		}
-		function Clicked(){
-			if (Validate()){
+		function Clicked() {
+			if (Validate()) {
 				document.legalForm.submit();
 			}
 		}
@@ -48,9 +48,7 @@
 			<tr>
 				<td></td>
 				<td>
-					<%--<input type="hidden" name="customerType" value="legal">--%>
-					<%--<input type="button" value="ثبت" onclick="Clicked()">--%>
-						<input type="submit" value="ثبت">
+					<input type="submit" value="ثبت">
 				</td>
 			</tr>
 		</table>

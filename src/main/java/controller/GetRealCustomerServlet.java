@@ -23,7 +23,7 @@ public class GetRealCustomerServlet extends HttpServlet {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		try {
-            response.getWriter().write(json);
+			response.getWriter().write(json);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

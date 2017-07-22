@@ -2,16 +2,19 @@
     align-items: center;
     text-align: center;
 }
+
 .size {
     width: 200px;
-    margin:auto;
+    margin: auto;
     border: none;
 }
+
 .big {
     font-size: 200%;
     margin: 100px;
     text-align: center;
 }
+
 .link {
     display: block;
     background-color: #f2f2f2;
@@ -22,6 +25,7 @@
     padding: 1%;
     width: 450px;
 }
+
 .fixed {
     width: 200px;
 }

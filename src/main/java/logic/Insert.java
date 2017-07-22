@@ -48,7 +48,7 @@ public class Insert {
 		loan.setName(loanName);
 		loan.setInterestRate(interestRate);
 		Set<GrantCondition> grantConditions = new HashSet<GrantCondition>();
-		for (int i=0; i<names.length; i++) {
+		for (int i = 0; i < names.length; i++) {
 			GrantCondition grantCondition = new GrantCondition();
 			grantCondition.setName(names[i]);
 			grantCondition.setMinDuration(Integer.parseInt(minDurations[i]));

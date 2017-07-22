@@ -15,7 +15,7 @@ public class CustomerCRUD {
 
 	private static int nextId() {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Query query  = session.createQuery("select cast(id as integer) from dao.Customer");
+		Query query = session.createQuery("select cast(id as integer) from dao.Customer");
 		List<Integer> ids = query.list();
 		int maxId = 0;
 		if (ids.size() > 0) {

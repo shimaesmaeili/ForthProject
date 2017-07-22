@@ -1,25 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script>
-        function Validate() {
-            var frm = document.loanForm;
-            if (frm.loanName.value == "") {
-                alert("وارد کردن نام تسهیلات الزامی است!");
-                return false;
-            } else if (frm.interestRate.value == "") {
-                alert("وارد کردن نرخ سود الزامی است!");
-                return false;
-            }
-            return true;
-        }
+	<script>
+		function Validate() {
+			var frm = document.loanForm;
+			if (frm.loanName.value == "") {
+				alert("وارد کردن نام تسهیلات الزامی است!");
+				return false;
+			} else if (frm.interestRate.value == "") {
+				alert("وارد کردن نرخ سود الزامی است!");
+				return false;
+			}
+			return true;
+		}
 
-        function Clicked() {
-            if (Validate()) {
-                document.loanForm.submit();
-            }
-        }
-    </script>
+		function Clicked() {
+			if (Validate()) {
+				document.loanForm.submit();
+			}
+		}
+	</script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>تسهیلات</title>
 </head>
@@ -45,8 +45,8 @@
 		</table>
 	</form>
 
-    <br><br><br><br>
-    <a href="/index.jsp" class="link">صفحه اصلی</a>
+	<br><br><br><br>
+	<a href="/index.jsp" class="link">صفحه اصلی</a>
 </div>
 </body>
 </html>

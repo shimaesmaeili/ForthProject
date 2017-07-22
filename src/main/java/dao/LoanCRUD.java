@@ -23,7 +23,7 @@ public class LoanCRUD {
 		Query query = session.createQuery("from dao.Loan");
 		List<Loan> results = query.list();
 		session.close();
-		for (Loan result : results){
+		for (Loan result : results) {
 			HashMap<String, String> fields = new HashMap<String, String>();
 			fields.put("id", String.valueOf(result.getId()));
 			fields.put("name", result.getName());

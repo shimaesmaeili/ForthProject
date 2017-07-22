@@ -20,7 +20,7 @@ public class CreateNewRealCustomerServlet extends HttpServlet {
 		Date birthDate = Date.valueOf(request.getParameter("birthDate"));
 		try {
 			String id = Insert.insertNewRealCustomer(idCode, firstName, lastName, fatherName, birthDate);
-			if (id != null){
+			if (id != null) {
 				request.setAttribute("id", id);
 				request.getRequestDispatcher("/show-new-customer-id.jsp").forward(request, response);
 			} else {

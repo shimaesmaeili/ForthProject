@@ -19,8 +19,8 @@
 			}
 			return true;
 		}
-		function Clicked(){
-			if (Validate()){
+		function Clicked() {
+			if (Validate()) {
 				document.searchForm.submit();
 			}
 		}

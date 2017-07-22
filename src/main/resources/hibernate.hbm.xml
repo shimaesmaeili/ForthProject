@@ -38,7 +38,7 @@
             <one-to-many class="dao.GrantCondition"/>
         </set>
     </class>
-    
+
     <class name="dao.GrantCondition" table="accounts.grantcondition">
         <id name="id" column="conditionId" type="java.lang.Integer">
             <generator class="identity"/>
