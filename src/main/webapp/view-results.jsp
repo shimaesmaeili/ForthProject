@@ -59,14 +59,14 @@
 				<td><c:out value="${customer.registrationDate}"/></td>
 			</c:if>
 			<td>
-				<c:url var="editUrl" value="/showCustomer">
+				<c:url var="editUrl" value="/show-customer">
 					<c:param name="customerType" value="${customerType}"/>
 					<c:param name="id" value="${customer.id}"/>
 				</c:url>
 				<a href="${editUrl}">ویرایش</a>
 			</td>
 			<td>
-				<c:url var="removeUrl" value="/removeCustomer">
+				<c:url var="removeUrl" value="/remove-customer">
 					<c:param name="customerType" value="${customerType}"/>
 					<c:param name="id" value="${customer.id}"/>
 				</c:url>

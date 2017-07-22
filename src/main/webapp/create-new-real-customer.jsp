@@ -11,11 +11,7 @@
 			for (var i = 0; i < input.length - 1; i++) {
 				sum += input[i] * (i + 1);
 			}
-			if (sum % 11 == input[input.length - 1] || sum % 11 == 11 - input[input.length - 1]) {
-				return true;
-			} else {
-				return false;
-			}
+			return !!(sum % 11 == input[input.length - 1] || sum % 11 == 11 - input[input.length - 1]);
 		}
 
 		function Validate() {
@@ -55,7 +51,7 @@
 <body>
 <h3 class="center">اطلاعات مورد نیاز: </h3>
 <div>
-	<form action="newRealCustomer" method="get" name="realForm">
+	<form action="/new-real-customer" method="get" name="realForm">
 		<table>
 			<tr>
 				<td>نام:</td>

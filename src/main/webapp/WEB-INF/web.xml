@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>newRealCustomerServlet</servlet-name>
-        <url-pattern>/newRealCustomer</url-pattern>
+        <url-pattern>/new-real-customer</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -19,7 +19,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>newLegalCustomerServlet</servlet-name>
-        <url-pattern>/newLegalCustomer</url-pattern>
+        <url-pattern>/new-legal-customer</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -37,7 +37,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>removeCustomerServlet</servlet-name>
-        <url-pattern>/removeCustomer</url-pattern>
+        <url-pattern>/remove-customer</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -46,7 +46,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>showCustomerServlet</servlet-name>
-        <url-pattern>/showCustomer</url-pattern>
+        <url-pattern>/show-customer</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -55,7 +55,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>updateCustomerServlet</servlet-name>
-        <url-pattern>/updateCustomer</url-pattern>
+        <url-pattern>/update-customer</url-pattern>
     </servlet-mapping>
 
     <servlet>
