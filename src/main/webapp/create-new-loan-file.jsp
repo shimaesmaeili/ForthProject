@@ -5,6 +5,28 @@
 	<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="js/dynamic.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+		function Validate() {
+			var frm = document.loanFileInfo;
+			if (frm.loanId.value == "") {
+				alert("انتخاب نوع تسهیلات الزامی است!");
+				return false;
+			} else if (frm.duration.value == "") {
+				alert("وارد کردن مدت زمان قرارداد الزامی است!");
+				return false;
+			} else if (frm.amount.value == "") {
+				alert("وارد کردن مبلغ قرارداد الزامی است!");
+				return false;
+			}
+			return true;
+		}
+
+		function Clicked() {
+			if (Validate()) {
+				document.loanFileInfo.submit();
+			}
+		}
+	</script>
 	<title>تشکیل پرونده تسهیلاتی</title>
 </head>
 <body>
@@ -40,7 +62,7 @@
 </div>
 <br><br><br><br>
 <div class="center" id="loansInfo" style="display:none">
-	<form action="/check-verification" method="get">
+	<form action="/check-verification" method="get" name="loanFileInfo">
 		<table>
 			<tr>
 				<td>نوع تسهیلات:</td>
@@ -65,7 +87,7 @@
 				<td></td>
 				<td>
 					<input type="hidden" name="customerId" id="userId" value="">
-					<input type="submit" value="بررسی">
+					<input type="button" value="بررسی" onclick="Clicked()">
 				</td>
 			</tr>
 		</table>
