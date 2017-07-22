@@ -1,7 +1,6 @@
 package controller;
 
 import logic.Insert;
-import logic.Verify;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
