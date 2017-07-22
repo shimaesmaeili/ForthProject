@@ -22,20 +22,12 @@ public class Verify {
 
 	public static boolean isValidCodeReal(String id, BigInteger newIdCode) {
 		String assignedId = RealCRUD.findIdByCode(newIdCode);
-		if (assignedId == null || assignedId.equals(id)) {
-			return true;
-		} else {
-			return false;
-		}
+		return assignedId == null || assignedId.equals(id);
 	}
 
 	public static boolean isValidCodeLegal(String id, BigInteger newCode) {
 		String assignedId = LegalCRUD.findIdByCode(newCode);
-		if (assignedId == null || assignedId.equals(id)) {
-			return true;
-		} else {
-			return false;
-		}
+		return assignedId == null || assignedId.equals(id);
 	}
 
 	public static boolean hasValidCondition(int loanId, int duration, BigInteger amount) {
