@@ -36,10 +36,10 @@ public class RealCRUD {
 
 	public static void remove(String id) {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		Query query = session.createQuery("delete from dao.Real where id='" + id + "'");
 		query.executeUpdate();
-		t.commit();
+		transaction.commit();
 		session.close();
 	}
 
@@ -80,9 +80,9 @@ public class RealCRUD {
 		query.setParameter("father", real.getFatherName());
 		query.setParameter("birth", real.getBirthDate());
 		query.setParameter("id", real.getId());
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		query.executeUpdate();
-		t.commit();
+		transaction.commit();
 		session.close();
 	}
 }

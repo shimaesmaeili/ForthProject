@@ -13,10 +13,10 @@ import java.util.List;
 public class LegalCRUD {
 	public static String insert(Legal legal) {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		CustomerCRUD.insert(legal);
 		session.save(legal);
-		t.commit();
+		transaction.commit();
 		session.close();
 		return legal.getId();
 	}
@@ -35,10 +35,10 @@ public class LegalCRUD {
 
 	public static void remove(String id) {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		Query query = session.createQuery("delete from dao.Legal where id='" + id + "'");
 		query.executeUpdate();
-		t.commit();
+		transaction.commit();
 		session.close();
 	}
 
@@ -82,9 +82,9 @@ public class LegalCRUD {
 		query.setParameter("name", legal.getName());
 		query.setParameter("date", legal.getRegistrationDate());
 		query.setParameter("id", legal.getId());
-		Transaction t = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		query.executeUpdate();
-		t.commit();
+		transaction.commit();
 		session.close();
 	}
 }
