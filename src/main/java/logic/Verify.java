@@ -43,11 +43,12 @@ public class Verify {
 		for (GrantCondition grantCondition : grantConditions){
 			if (grantCondition.getMinDuration() < duration && grantCondition.getMaxDuration() > duration) {
 				if (grantCondition.getMinAmount().compareTo(amount) < 0 && grantCondition.getMaxAmount().compareTo(amount) > 0) {
-					log.info("The condition defined by customer has been ");
+					log.info("At least one of the grant condition has been satisfied.");
 					return true;
 				}
 			}
 		}
+		log.warn("None of the grant conditions has been satisfied!");
 		return false;
 	}
 }
