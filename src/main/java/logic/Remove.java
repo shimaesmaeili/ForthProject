@@ -6,11 +6,11 @@ import dao.RealCRUD;
 import java.sql.SQLException;
 
 public class Remove {
-	public static void removeRealCustomer(String id) throws SQLException, ClassNotFoundException {
+	public static void removeRealCustomer(String id) {
 		RealCRUD.remove(id);
 	}
 
-	public static void removeLegalCustomer(String id) throws SQLException, ClassNotFoundException {
+	public static void removeLegalCustomer(String id) {
 		LegalCRUD.remove(id);
 	}
 }

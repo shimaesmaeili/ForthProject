@@ -2,16 +2,13 @@ package logic;
 
 import dao.*;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
 import java.sql.Date;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Insert {
-	public static String insertNewRealCustomer(BigInteger idCode, String firstName, String lastName, String fatherName, Date birthDate) throws SQLException, ClassNotFoundException {
+	public static String insertNewRealCustomer(BigInteger idCode, String firstName, String lastName, String fatherName, Date birthDate) {
 		Real real = new Real();
 		real.setIdCode(idCode);
 		real.setFirstName(firstName);
@@ -22,7 +19,7 @@ public class Insert {
 		return RealCRUD.insert(real);
 	}
 
-	public static String insertNewLegalCustomer(BigInteger eCode, String name, Date registrationDate) throws SQLException, ClassNotFoundException {
+	public static String insertNewLegalCustomer(BigInteger eCode, String name, Date registrationDate) {
 		Legal legal = new Legal();
 		legal.seteCode(eCode);
 		legal.setName(name);
@@ -31,7 +28,7 @@ public class Insert {
 		return LegalCRUD.insert(legal);
 	}
 
-	public static void insertNewLoan(String loanName, int interestRate, String[] names, String[] minDurations, String[] maxDurations, String[] minAmounts, String[] maxAmounts) throws SQLException, ClassNotFoundException {
+	public static void insertNewLoan(String loanName, int interestRate, String[] names, String[] minDurations, String[] maxDurations, String[] minAmounts, String[] maxAmounts) {
 		Loan loan = new Loan();
 		loan.setName(loanName);
 		loan.setInterestRate(interestRate);
@@ -52,7 +49,7 @@ public class Insert {
 		LoanCRUD.insert(loan);
 	}
 
-	public static void createNewLoanFile(String customerId, int loanId, int duration, BigInteger amount) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
+	public static void createNewLoanFile(String customerId, int loanId, int duration, BigInteger amount) {
 		LoanFile loanFile = new LoanFile();
 		Loan loan = LoanCRUD.findLoanById(loanId);
 		loanFile.setLoan(loan);
@@ -62,7 +59,6 @@ public class Insert {
 		loanFile.setLoanAmount(amount);
 		loanFile.setId(real.getId());
 
-//		RealCRUD.addLoanFile(loanFile);
 		LoanFileCRUD.insert(loanFile);
 	}
 }

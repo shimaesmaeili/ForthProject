@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
-import java.sql.SQLException;
 
 public class CheckVerifyGrantConditionsServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String customerId = request.getParameter("customerId");
         int loanId = Integer.parseInt(request.getParameter("loanId"));
         int duration = Integer.parseInt(request.getParameter("duration"));
@@ -28,17 +26,9 @@ public class CheckVerifyGrantConditionsServlet extends HttpServlet {
                 request.setAttribute("message", "مقادیر واردشده در هیچ‌یک از شروط اعطای این تسهیلات صدق نمی‌کند!");
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
             }
-        } catch (InstantiationException e) {
+        } catch (ServletException e) {
             e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

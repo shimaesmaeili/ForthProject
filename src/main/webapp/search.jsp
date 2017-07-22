@@ -71,6 +71,6 @@
 	</fieldset>
 </form>
 <br><br>
-<a href="/customers.jsp" class="link">صفحه اصلی</a>
+<a href="/customers.jsp" class="link">صفحه مشتریان</a>
 </body>
 </html>

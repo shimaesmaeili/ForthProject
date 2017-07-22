@@ -5,21 +5,19 @@ import dao.LoanCRUD;
 import dao.Real;
 import dao.RealCRUD;
 
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Search {
-	public static ArrayList<HashMap<String, String>> findRealCustomers(String field, String value) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
+	public static ArrayList<HashMap<String, String>> findRealCustomers(String field, String value) {
 		return RealCRUD.search(field, value);
 	}
 
-	public static ArrayList<HashMap<String, String>> findLegalCustomers(String field, String value) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
+	public static ArrayList<HashMap<String, String>> findLegalCustomers(String field, String value) {
 		return LegalCRUD.search(field, value);
 	}
 
-	public static HashMap<String, String> findRealCustomerById(String id) throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException {
+	public static HashMap<String, String> findRealCustomerById(String id) {
 		Real realCustomer = RealCRUD.findById(id);
 		HashMap<String, String> realToMap = new HashMap<String, String>();
 		realToMap.put("id", realCustomer.getId());
@@ -31,7 +29,7 @@ public class Search {
 		return realToMap;
 	}
 
-	public static HashMap<String, String> findLegalCustomerById(String id) throws SQLException, ClassNotFoundException {
+	public static HashMap<String, String> findLegalCustomerById(String id) {
 		return LegalCRUD.findById(id);
 	}
 

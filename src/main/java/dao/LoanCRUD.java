@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.sql.SQLException;
 import java.util.*;
 
 public class LoanCRUD {
@@ -24,11 +23,11 @@ public class LoanCRUD {
 		Query query = session.createQuery("from dao.Loan");
 		List<Loan> results = query.list();
 		session.close();
-		for (int i=0; i<results.size(); i++){
+		for (Loan result : results){
 			HashMap<String, String> fields = new HashMap<String, String>();
-			fields.put("id", String.valueOf(results.get(i).getId()));
-			fields.put("name", results.get(i).getName());
-			fields.put("interestRate", String.valueOf(results.get(i).getInterestRate()));
+			fields.put("id", String.valueOf(result.getId()));
+			fields.put("name", result.getName());
+			fields.put("interestRate", String.valueOf(result.getInterestRate()));
 
 			loans.add(fields);
 		}

@@ -6,19 +6,18 @@ import dao.LoanCRUD;
 import dao.RealCRUD;
 
 import java.math.BigInteger;
-import java.sql.SQLException;
 import java.util.List;
 
 public class Verify {
-	public static String getRealId(BigInteger idCode) throws SQLException, ClassNotFoundException {
+	public static String getRealId(BigInteger idCode) {
 		return RealCRUD.findIdByCode(idCode);
 	}
 
-	public static String getLegalId(BigInteger eCode) throws SQLException, ClassNotFoundException {
+	public static String getLegalId(BigInteger eCode) {
 		return LegalCRUD.findIdByCode(eCode);
 	}
 
-	public static boolean isValidCodeReal(String id, BigInteger newIdCode) throws SQLException, ClassNotFoundException {
+	public static boolean isValidCodeReal(String id, BigInteger newIdCode) {
 		String assignedId = RealCRUD.findIdByCode(newIdCode);
 		if (assignedId==null || assignedId.equals(id)) {
 			return true;
@@ -27,7 +26,7 @@ public class Verify {
 		}
 	}
 
-	public static boolean isValidCodeLegal(String id, BigInteger newCode) throws SQLException, ClassNotFoundException {
+	public static boolean isValidCodeLegal(String id, BigInteger newCode) {
 		String assignedId = LegalCRUD.findIdByCode(newCode);
 		if (assignedId==null || assignedId.equals(id)) {
 			return true;

@@ -3,11 +3,11 @@ package dao;
 import java.math.BigInteger;
 
 public class LoanFile {
-	String id;
-	Real realCustomer;
-	Loan loan;
-	int loanDuration;
-	BigInteger loanAmount;
+	private String id;
+	private Real realCustomer;
+	private Loan loan;
+	private int loanDuration;
+	private BigInteger loanAmount;
 
 	public LoanFile() {
 	}

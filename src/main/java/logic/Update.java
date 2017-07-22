@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 public class Update {
-	public static void updateRealCustomer(HashMap<String, String> newValues) throws SQLException, ClassNotFoundException {
+	public static void updateRealCustomer(HashMap<String, String> newValues) {
 		Real real = new Real();
 		real.setId(newValues.get("id"));
 		real.setIdCode(new BigInteger(newValues.get("idCode")));
@@ -23,7 +23,7 @@ public class Update {
 		RealCRUD.update(real);
 	}
 
-	public static void updateLegalCustomer(HashMap<String, String> newValues) throws SQLException, ClassNotFoundException {
+	public static void updateLegalCustomer(HashMap<String, String> newValues) {
 		Legal legal = new Legal();
 		legal.setId(newValues.get("id"));
 		legal.seteCode(new BigInteger(newValues.get("eCode")));

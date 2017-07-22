@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.sql.SQLException;
 import java.util.HashMap;
 
 public class UpdateCustomerServlet extends HttpServlet {
@@ -31,10 +30,6 @@ public class UpdateCustomerServlet extends HttpServlet {
 					request.setAttribute("message", "امکان تغییر کد ملی مشتری به کد ملی جدید وجود ندارد!");
 					request.getRequestDispatcher("/error.jsp").forward(request, response);
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
 			} catch (ServletException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -54,10 +49,6 @@ public class UpdateCustomerServlet extends HttpServlet {
 					request.setAttribute("message", "امکان تغییر کد اقتصادی مشتری به کد اقتصادی جدید وجود ندارد!");
 					request.getRequestDispatcher("/error.jsp").forward(request, response);
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
 			} catch (ServletException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

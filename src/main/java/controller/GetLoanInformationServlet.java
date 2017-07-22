@@ -8,9 +8,15 @@ import java.io.IOException;
 
 public class GetLoanInformationServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("loanName", request.getParameter("loanName"));
 		request.setAttribute("interestRate", request.getParameter("interestRate"));
-		request.getRequestDispatcher("/define-grant-conditions.jsp").forward(request, response);
+		try {
+			request.getRequestDispatcher("/define-grant-conditions.jsp").forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

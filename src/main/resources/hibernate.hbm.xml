@@ -54,7 +54,7 @@
     </class>
 
     <class name="dao.LoanFile" table="accounts.loanfile">
-        <id name="id" column="loanfileId"/>
+        <id name="id" column="customerId"/>
         <property name="loanDuration" column="loanDuration"/>
         <property name="loanAmount" column="loanAmount"/>
         <one-to-one name="realCustomer" class="dao.Real" cascade="save-update"/>

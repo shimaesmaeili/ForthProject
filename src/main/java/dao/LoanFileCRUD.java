@@ -11,7 +11,5 @@ public class LoanFileCRUD {
 		session.save(loanFile);
 		transaction.commit();
 		session.close();
-
-//		RealCRUD.addLoanFile(loanFile);
 	}
 }

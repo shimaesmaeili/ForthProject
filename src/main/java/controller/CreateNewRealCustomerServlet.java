@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class CreateNewRealCustomerServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		BigInteger idCode = new BigInteger(request.getParameter("idCode"));
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -29,9 +28,9 @@ public class CreateNewRealCustomerServlet extends HttpServlet {
 				request.setAttribute("message", "مشتری با این کد ملی قبلا ثبت شده است.");
 				request.getRequestDispatcher("/error.jsp").forward(request, response);
 			}
-		} catch (SQLException e) {
+		} catch (ServletException e) {
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
